@@ -6,18 +6,60 @@
 このアプリケーションは、ユーザーがTODOタスクを作成、管理、追跡するためのウェブベースのシステムです。
 
 ## 技術スタック
-### インフラ
-- AWS（サーバーレスアーキテクチャ）
-- AWS CDK
+
+### AWSサービス
+- Amazon Cognito - ユーザー認証
+- Amazon API Gateway - RESTful API のエンドポイント
+- AWS Lambda - サーバーレスバックエンド処理
+- Amazon DynamoDB - NoSQL データベース
+- AWS CloudFront - コンテンツ配信
+- Amazon S3 - 静的ファイルのホスティング
+- AWS CDK - インフラのコード化
 
 ### フロントエンド
-- React
-- TypeScript
-- マテリアルデザイン
+- React 18
+- TypeScript 5.x
+- Material-UI (MUI) v5
+- React Router v6
+- Axios
+- Redux Toolkit / React Query
 
 ### バックエンド
-- Node.js
-- TypeScript
+- Node.js 20.x
+- TypeScript 5.x
+- AWS SDK v3
+- Jest (テスト)
+
+## アーキテクチャ図
+
+```
+User -> CloudFront -> S3 (フロントエンド)
+User -> API Gateway -> Cognito/Lambda -> DynamoDB (バックエンド)
+```
+
+## プロジェクト構造
+```
+/
+├── frontend/                 # フロントエンドReactアプリケーション
+│   ├── public/               # 公開アセット
+│   └── src/                  # ソースコード
+│       ├── components/       # UIコンポーネント
+│       ├── pages/            # ページコンポーネント
+│       ├── hooks/            # カスタムフック
+│       ├── services/         # APIサービス
+│       ├── store/            # 状態管理
+│       ├── types/            # TypeScript型定義
+│       └── utils/            # ユーティリティ関数
+│
+├── backend/                  # バックエンドサーバーレス関数
+│   ├── src/                  # ソースコード
+│   │   ├── auth/             # 認証関連関数
+│   │   └── todos/            # TODO管理関連関数
+│   └── tests/                # テストファイル
+│
+└── infrastructure/           # AWS CDKコード
+    └── lib/                  # インフラストラクチャスタック
+```
 - AWS Lambda
 - Amazon DynamoDB
 
