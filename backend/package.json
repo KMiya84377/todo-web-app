@@ -1,0 +1,45 @@
+{
+  "name": "todo-app-backend",
+  "version": "1.0.0",
+  "description": "Backend for TODO application using AWS Lambda and DynamoDB",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "deploy": "serverless deploy"
+  },
+  "keywords": [
+    "todo",
+    "aws",
+    "lambda",
+    "dynamodb",
+    "typescript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-cognito-identity-provider": "^3.x",
+    "@aws-sdk/client-dynamodb": "^3.x",
+    "@aws-sdk/lib-dynamodb": "^3.x",
+    "aws-lambda": "^1.0.7",
+    "joi": "^17.x",
+    "uuid": "^9.x"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.x",
+    "@types/jest": "^29.x",
+    "@types/node": "^20.x",
+    "@types/uuid": "^9.x",
+    "@typescript-eslint/eslint-plugin": "^6.x",
+    "@typescript-eslint/parser": "^6.x",
+    "eslint": "^8.x",
+    "jest": "^29.x",
+    "prettier": "^3.x",
+    "serverless": "^3.x",
+    "serverless-plugin-typescript": "^2.x",
+    "ts-jest": "^29.x",
+    "typescript": "^5.x"
+  }
+}
